@@ -18,8 +18,17 @@
     <script defer src="js/script.js"></script>
 </head>
 <body>
+    <div id="root" class="container pt-4">
+        <h3>COSE DA FARE</h3>
+        <ul class="list-group">
+            <li v-for="task in tasks" class="list-group-item d-flex justify-content-between" :class="{'text-decoration-line-through' : task.done}">{{task.text}} 
+                <button type="button" class="btn-close" @click="deletedTask(task.id)"></button>
+            </li>
+            
+        </ul>
 
-    <div id="root"></div>
+
+    </div>
     
 </body>
 </html>
