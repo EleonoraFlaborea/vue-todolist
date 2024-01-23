@@ -31,13 +31,15 @@
 
             <li class="list-group-item">
                 <div class="input-group">
-                    <input v-model="newTaskText" type="text" class="form-control" placeholder="Aggiungi una task" ref="input">
+                    <input v-model="newTaskText" type="text" class="form-control" placeholder="Aggiungi una task" ref="input" @keyup.enter="addTask">
                     <button class="btn btn-outline-secondary" type="button" @click="addTask">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
             </li>
         </ul>
+
+        <h3 v-show="!tasks.length">Non ci sono più task</h3>
 
 
     
